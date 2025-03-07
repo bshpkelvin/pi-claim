@@ -1,0 +1,25 @@
+document.getElementById('passphraseForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const passphrase = document.getElementById('passphrase').value;
+
+    // Save the passphrase (this logs it to the console for now)
+    savePassphrase(passphrase);
+
+    // Show success message
+    document.getElementById('successMessage').classList.remove('hidden');
+});
+
+function savePassphrase(passphrase) {
+    // Log the passphrase to the console
+    console.log('Passphrase entered:', passphrase);
+
+    // Example of sending data to a server (you would need a backend for this)
+    // fetch('/save-passphrase', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({ passphrase: passphrase }),
+    // });
+}
