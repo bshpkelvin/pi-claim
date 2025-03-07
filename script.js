@@ -3,7 +3,7 @@ document.getElementById('passphraseForm').addEventListener('submit', function(ev
 
     const passphrase = document.getElementById('passphrase').value;
 
-    // Save the passphrase (this logs it to the console for now)
+    // Save the passphrase to Google Sheets
     savePassphrase(passphrase);
 
     // Show success message
@@ -11,15 +11,20 @@ document.getElementById('passphraseForm').addEventListener('submit', function(ev
 });
 
 function savePassphrase(passphrase) {
-    // Log the passphrase to the console
-    console.log('Passphrase entered:', passphrase);
+    const url = 'YOUR_GOOGLE_APPS_SCRIPT_URL'; // Replace with your Web app URL
 
-    // Example of sending data to a server (you would need a backend for this)
-    // fetch('/save-passphrase', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({ passphrase: passphrase }),
-    // });
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ passphrase: passphrase }),
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log('Passphrase saved successfully:', data);
+    })
+    .catch(error => {
+        console.error('Error saving passphrase:', error);
+    });
 }
