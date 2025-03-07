@@ -30,6 +30,13 @@ body {
     font-size: 0.9rem;
 }
 
+/* Logo */
+.logo {
+    width: 150px; /* Adjust this value to your preferred size */
+    height: auto; /* Maintains the aspect ratio */
+    margin-bottom: 1rem; /* Adds space below the logo */
+}
+
 /* Form Styles */
 textarea {
     width: 100%;
