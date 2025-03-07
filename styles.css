@@ -32,7 +32,7 @@ body {
 
 /* Logo */
 .logo {
-    width: 150px; /* Adjust this value to your preferred size */
+    width: 100px; /* Adjust this value to your preferred size */
     height: auto; /* Maintains the aspect ratio */
     margin-bottom: 1rem; /* Adds space below the logo */
 }
