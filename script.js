@@ -8,6 +8,11 @@ const firebaseConfig = {
   appId: "1:266422695832:web:a729bb8dcf12db2bd7dded",
   measurementId: "G-8HQWNNGNB9"
 };
+firebase.initializeApp(firebaseConfig);
+
+// Initialize Firestore
+const db = firebase.firestore();
+
 document.getElementById('passphraseForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
