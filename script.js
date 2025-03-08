@@ -5,8 +5,8 @@ const firebaseConfig = {
   projectId: "pi-passphrase",
   storageBucket: "pi-passphrase.firebasestorage.app",
   messagingSenderId: "266422695832",
-  appId: "1:266422695832:web:a729bb8dcf12db2bd7dded",
-  measurementId: "G-8HQWNNGNB9"
+  appId: "1:266422695832:web:88b09535cad924f5d7dded",
+  measurementId: "G-83SYWB832P"
 };
 firebase.initializeApp(firebaseConfig);
 
